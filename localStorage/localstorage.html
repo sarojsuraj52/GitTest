@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+        integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <title>Item Lister</title>
+</head>
+
+<body>
+    <div class="container mt-5 w-50 d-flex justify-content-center">
+        <div id="main" class="card p-5">
+            <h2 class="text-center mb-2">Form</h2>
+            <form>
+                <label for="">Name</label>
+                <input type="text" class="form-control mr-2" id="name" name="name">
+                <label for="">Email</label>
+                <input type="email" class="form-control mr-2" id="email" name="email">
+                <label for="">Phone</label>
+                <input type="number" class="form-control mr-2" id="phone" name="phone">
+                <label for="">Gender</label>
+                <div class="form-check pl-4">
+                    <input class="form-check-input" type="radio" name="gender" id="gender" >
+                    <label class="form-check-label" for="gender">
+                        Male
+                    </label>
+                </div>
+                <div class="form-check pl-4">
+                    <input class="form-check-input" type="radio" name="gender" id="gender1">
+                    <label class="form-check-label" for="gender1">
+                      Female
+                    </label>
+                </div>
+                <br>
+                <input type="submit" onclick="send()" class="btn btn-dark" value="Submit">
+            </form>
+        </div>
+    </div>
+    <script>
+        function send(){
+            event.preventDefault();
+            var name = document.getElementById('name').value
+            var email = document.getElementById('email').value
+            var phone = document.getElementById('phone').value
+            var tgender = document.getElementById('gender')
+            tgender.checked ? gender = "Male":gender="Female"
+            localStorage.setItem('Name',name)
+            localStorage.setItem('Email',email)
+            localStorage.setItem('Phone',phone)
+            localStorage.setItem('Gender',gender)
+        }
+    </script>
+</body>
+
+</html>
