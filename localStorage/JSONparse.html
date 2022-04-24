@@ -71,7 +71,8 @@
 
             };
             localStorage.setItem('myObj',JSON.stringify(myObj));
-            // var serialised_myObj = JSON.stringify(myObj)
+
+            
             var deserialised_myObj = JSON.parse(localStorage.getItem('myObj'))
             var storedName = deserialised_myObj.Name
             var storedEmail = deserialised_myObj.Email
